@@ -59,10 +59,10 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
   }
 }
 
-export async function DELETE(_: Request, { params }: { params: { id: string } }) {
+export async function DELETE(_: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
-    await prisma.destinationFAQ.deleteMany({ where: { destinationId: params.id } });
-    await prisma.destinations.delete({ where: { id: params.id } });
+    await prisma.destinationFAQ.deleteMany({ where: { destinationId: (await params).id } });
+    await prisma.destinations.delete({ where: { id: (await params).id } });
     return NextResponse.json({ message: "Deleted" });
   } catch (err) {
     console.error(err);
