@@ -1,9 +1,11 @@
 // prisma/schema.prisma (updated)
 
 generator client {
-  provider = "prisma-client"
+  provider      = "prisma-client"
   binaryTargets = ["native", "rhel-openssl-3.0.x"]
-  output   = "../app/prisma"
+  output        = "../app/prisma"
+  runtime       = "nodejs"
+  engineType    = "client"
 }
 
 datasource db {
@@ -16,8 +18,8 @@ model Package {
   name        String
   days        Int
   nights      Int
-  image       String?                         // optional image
-  price       Decimal        @db.Decimal(12, 2)
+  image       String? // optional image
+  price       Decimal         @db.Decimal(12, 2)
   type        String?
   location    String?
   inclusions  IncludedItems[]
@@ -42,8 +44,8 @@ model Bookings {
   package        Package   @relation(fields: [packageId], references: [id], onDelete: Cascade)
   packageId      String
 
-  createdAt      DateTime  @default(now())
-  updatedAt      DateTime  @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   @@index([packageId])
 }
@@ -58,7 +60,7 @@ model Payment {
   booking           Bookings @relation(fields: [bookingId], references: [id], onDelete: Cascade)
   bookingId         String
 
-  createdAt         DateTime @default(now())
+  createdAt DateTime @default(now())
 
   @@index([bookingId])
 }
@@ -71,8 +73,8 @@ model DayItinerary {
   package     Package         @relation(fields: [packageId], references: [id], onDelete: Cascade)
   packageId   String
 
-  @@index([packageId])
   @@unique([packageId, dayNumber]) // ensures one entry per day number per package
+  @@index([packageId])
 }
 
 model FeaturedItems {
