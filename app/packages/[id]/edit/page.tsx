@@ -5,6 +5,7 @@ import { useParams } from "next/navigation";
 import DropzoneClient from "@/components/DropzoneClient";
 import toast from "react-hot-toast";
 import { updatePackageAction } from "@/app/actions/package.server";
+import { FolderInputIcon } from "lucide-react";
 
 type Inclusion = { id: string; item: string };
 type Exclusion = { id: string; item: string };
@@ -13,6 +14,7 @@ type Itinerary = {
   id: string;
   dayNumber: number | "";
   description: string;
+  title: string;
   features: Feature[];
 };
 
@@ -77,7 +79,7 @@ export default function EditPackagePage() {
                     ? it.features.map((f: any) => ({ id: f.id, item: f.item }))
                     : [{ id: uid(), item: "" }],
               }))
-            : [{ id: uid(), dayNumber: 1, description: "", features: [{ id: uid(), item: "" }] }]
+            : [{ id: uid(), dayNumber: 1, title: "", description: "", features: [{ id: uid(), item: "" }] }]
         );
       } catch (err) {
         console.error(err);
@@ -107,7 +109,7 @@ export default function EditPackagePage() {
   const addItinerary = () =>
     setItineraries([
       ...itineraries,
-      { id: uid(), dayNumber: itineraries.length + 1, description: "", features: [{ id: uid(), item: "" }] },
+      { id: uid(), dayNumber: itineraries.length + 1, title: "", description: "", features: [{ id: uid(), item: "" }] },
     ]);
   const removeItinerary = (id: string) =>
     setItineraries(itineraries.filter((it) => it.id !== id));
@@ -160,6 +162,7 @@ export default function EditPackagePage() {
         itineraries: itineraries.map((it) => ({
           dayNumber: Number(it.dayNumber),
           description: it.description,
+          title: it.title,
           features: it.features.filter((f) => f.item.trim()),
         })),
       });
@@ -290,6 +293,14 @@ export default function EditPackagePage() {
                     </button>
                   )}
                 </div>
+                <input
+                  value={it.title}
+                  onChange={(e) =>
+                    updateItineraryField(it.id, "title", e.target.value)
+                  }
+                  placeholder="Day title"
+                  className="w-full border p-2 rounded text-sm"
+                />
                 <textarea
                   value={it.description}
                   onChange={(e) =>
