@@ -133,6 +133,8 @@ model BlogCategory {
   id    String  @id @default(cuid())
   name  String  @unique
   blogs Blogs[] // implicit many-to-many
+
+  @@index([name])
 }
 
 model Destinations {
