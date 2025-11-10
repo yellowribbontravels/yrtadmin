@@ -5,7 +5,7 @@ import { prisma } from "@/lib/db";
 export async function GET() {
   try {
     const destinations = await prisma.destinations.findMany({
-      include: { faqs: true },
+      include: { faqs: true, places: true },
       orderBy: { createdAt: "desc" },
     });
     return NextResponse.json(destinations);
