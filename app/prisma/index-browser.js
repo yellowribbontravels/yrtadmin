@@ -246,6 +246,20 @@ exports.Prisma.TestimonialsScalarFieldEnum = {
   updatedAt: 'updatedAt'
 };
 
+exports.Prisma.RzorpayPaymentScalarFieldEnum = {
+  id: 'id',
+  amount: 'amount',
+  paid: 'paid',
+  customerEmail: 'customerEmail',
+  customerName: 'customerName',
+  customerId: 'customerId',
+  customerPhone: 'customerPhone',
+  paymentMethod: 'paymentMethod',
+  razorpayPaymentId: 'razorpayPaymentId',
+  paymentDate: 'paymentDate',
+  createdAt: 'createdAt'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -276,7 +290,8 @@ exports.Prisma.ModelName = {
   Destinations: 'Destinations',
   Places: 'Places',
   DestinationFAQ: 'DestinationFAQ',
-  Testimonials: 'Testimonials'
+  Testimonials: 'Testimonials',
+  RzorpayPayment: 'RzorpayPayment'
 };
 
 /**
