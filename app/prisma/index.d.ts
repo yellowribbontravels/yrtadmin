@@ -17931,7 +17931,7 @@ export namespace Prisma {
     customerName: string
     customerId: string
     customerPhone: string
-    paymentMethod: string
+    paymentMethod: string | null
     razorpayPaymentId: string | null
     paymentDate: Date
     createdAt: Date
@@ -18025,7 +18025,7 @@ export namespace Prisma {
       customerName: string
       customerId: string
       customerPhone: string
-      paymentMethod: string
+      paymentMethod: string | null
       razorpayPaymentId: string | null
       paymentDate: Date
       createdAt: Date
@@ -20017,7 +20017,7 @@ export namespace Prisma {
     customerName?: StringFilter<"PaymentModel"> | string
     customerId?: StringFilter<"PaymentModel"> | string
     customerPhone?: StringFilter<"PaymentModel"> | string
-    paymentMethod?: StringFilter<"PaymentModel"> | string
+    paymentMethod?: StringNullableFilter<"PaymentModel"> | string | null
     razorpayPaymentId?: StringNullableFilter<"PaymentModel"> | string | null
     paymentDate?: DateTimeFilter<"PaymentModel"> | Date | string
     createdAt?: DateTimeFilter<"PaymentModel"> | Date | string
@@ -20031,7 +20031,7 @@ export namespace Prisma {
     customerName?: SortOrder
     customerId?: SortOrder
     customerPhone?: SortOrder
-    paymentMethod?: SortOrder
+    paymentMethod?: SortOrderInput | SortOrder
     razorpayPaymentId?: SortOrderInput | SortOrder
     paymentDate?: SortOrder
     createdAt?: SortOrder
@@ -20048,7 +20048,7 @@ export namespace Prisma {
     customerName?: StringFilter<"PaymentModel"> | string
     customerId?: StringFilter<"PaymentModel"> | string
     customerPhone?: StringFilter<"PaymentModel"> | string
-    paymentMethod?: StringFilter<"PaymentModel"> | string
+    paymentMethod?: StringNullableFilter<"PaymentModel"> | string | null
     razorpayPaymentId?: StringNullableFilter<"PaymentModel"> | string | null
     paymentDate?: DateTimeFilter<"PaymentModel"> | Date | string
     createdAt?: DateTimeFilter<"PaymentModel"> | Date | string
@@ -20062,7 +20062,7 @@ export namespace Prisma {
     customerName?: SortOrder
     customerId?: SortOrder
     customerPhone?: SortOrder
-    paymentMethod?: SortOrder
+    paymentMethod?: SortOrderInput | SortOrder
     razorpayPaymentId?: SortOrderInput | SortOrder
     paymentDate?: SortOrder
     createdAt?: SortOrder
@@ -20084,7 +20084,7 @@ export namespace Prisma {
     customerName?: StringWithAggregatesFilter<"PaymentModel"> | string
     customerId?: StringWithAggregatesFilter<"PaymentModel"> | string
     customerPhone?: StringWithAggregatesFilter<"PaymentModel"> | string
-    paymentMethod?: StringWithAggregatesFilter<"PaymentModel"> | string
+    paymentMethod?: StringNullableWithAggregatesFilter<"PaymentModel"> | string | null
     razorpayPaymentId?: StringNullableWithAggregatesFilter<"PaymentModel"> | string | null
     paymentDate?: DateTimeWithAggregatesFilter<"PaymentModel"> | Date | string
     createdAt?: DateTimeWithAggregatesFilter<"PaymentModel"> | Date | string
@@ -21015,7 +21015,7 @@ export namespace Prisma {
     customerName: string
     customerId: string
     customerPhone: string
-    paymentMethod: string
+    paymentMethod?: string | null
     razorpayPaymentId?: string | null
     paymentDate?: Date | string
     createdAt?: Date | string
@@ -21029,7 +21029,7 @@ export namespace Prisma {
     customerName: string
     customerId: string
     customerPhone: string
-    paymentMethod: string
+    paymentMethod?: string | null
     razorpayPaymentId?: string | null
     paymentDate?: Date | string
     createdAt?: Date | string
@@ -21043,7 +21043,7 @@ export namespace Prisma {
     customerName?: StringFieldUpdateOperationsInput | string
     customerId?: StringFieldUpdateOperationsInput | string
     customerPhone?: StringFieldUpdateOperationsInput | string
-    paymentMethod?: StringFieldUpdateOperationsInput | string
+    paymentMethod?: NullableStringFieldUpdateOperationsInput | string | null
     razorpayPaymentId?: NullableStringFieldUpdateOperationsInput | string | null
     paymentDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -21057,7 +21057,7 @@ export namespace Prisma {
     customerName?: StringFieldUpdateOperationsInput | string
     customerId?: StringFieldUpdateOperationsInput | string
     customerPhone?: StringFieldUpdateOperationsInput | string
-    paymentMethod?: StringFieldUpdateOperationsInput | string
+    paymentMethod?: NullableStringFieldUpdateOperationsInput | string | null
     razorpayPaymentId?: NullableStringFieldUpdateOperationsInput | string | null
     paymentDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -21071,7 +21071,7 @@ export namespace Prisma {
     customerName: string
     customerId: string
     customerPhone: string
-    paymentMethod: string
+    paymentMethod?: string | null
     razorpayPaymentId?: string | null
     paymentDate?: Date | string
     createdAt?: Date | string
@@ -21085,7 +21085,7 @@ export namespace Prisma {
     customerName?: StringFieldUpdateOperationsInput | string
     customerId?: StringFieldUpdateOperationsInput | string
     customerPhone?: StringFieldUpdateOperationsInput | string
-    paymentMethod?: StringFieldUpdateOperationsInput | string
+    paymentMethod?: NullableStringFieldUpdateOperationsInput | string | null
     razorpayPaymentId?: NullableStringFieldUpdateOperationsInput | string | null
     paymentDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -21099,7 +21099,7 @@ export namespace Prisma {
     customerName?: StringFieldUpdateOperationsInput | string
     customerId?: StringFieldUpdateOperationsInput | string
     customerPhone?: StringFieldUpdateOperationsInput | string
-    paymentMethod?: StringFieldUpdateOperationsInput | string
+    paymentMethod?: NullableStringFieldUpdateOperationsInput | string | null
     razorpayPaymentId?: NullableStringFieldUpdateOperationsInput | string | null
     paymentDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string

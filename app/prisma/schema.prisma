@@ -196,7 +196,7 @@ model PaymentModel {
   customerName      String
   customerId        String
   customerPhone     String
-  paymentMethod     String
+  paymentMethod     String?
   razorpayPaymentId String?
   paymentDate       DateTime @default(now())
   createdAt         DateTime @default(now())
